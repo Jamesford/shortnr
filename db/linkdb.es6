@@ -36,6 +36,14 @@ class LinkDB {
     return deferred.promise
   }
 
+  all() {
+    let deferred = Q.defer()
+    db.list((err, data) => {
+      this._handle(err, data, deferred)
+    })
+    return deferred.promise
+  }
+
   info(id) {
     let deferred = Q.defer()
     db.head(id, (err, _, headers) => {

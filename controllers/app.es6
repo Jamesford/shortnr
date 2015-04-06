@@ -42,6 +42,17 @@ var Routes = {
     }
   },
 
+  list: {
+    handler(req, res) {
+      // Return all links
+      LinkDB.all().then((result) => {
+        res(result)
+      }).fail((err) => {
+        res(err.reason).code(err.statusCode)
+      })
+    }
+  },
+
   save: {
     validate: {
       payload: {

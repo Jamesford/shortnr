@@ -8,6 +8,7 @@ var Endpoints = [
     
     // Api
     { method: 'GET',    path: '/api/{id}',        config: App.view   },
+    { method: 'GET',    path: '/api/all_links',   config: App.list   },
     { method: 'POST',   path: '/api/exists',      config: App.exists },
     { method: 'POST',   path: '/api/save',        config: App.save   },
     { method: 'POST',   path: '/api/remove',      config: App.remove }
