@@ -13,7 +13,7 @@ class LinkDB {
 
 // DB Operations
   _save(id, data) {
-    deferred = Q.defer()
+    let deferred = Q.defer()
     db.insert(data, id, (err, data) => {
       this._handle(err, data, deferred)
     })
@@ -21,7 +21,7 @@ class LinkDB {
   }
 
   _remove(id, rev) {
-    deferred = Q.defer()
+    let deferred = Q.defer()
     db.destroy(id, rev, (err, data) => {
       this._handle(err, data, deferred)
     })
@@ -29,7 +29,7 @@ class LinkDB {
   }
 
   get(id) {
-    deferred = Q.defer()
+    let deferred = Q.defer()
     db.get(id, (err, data) => {
       this._handle(err, data, deferred)
     })
@@ -37,7 +37,7 @@ class LinkDB {
   }
 
   info(id) {
-    deferred = Q.defer()
+    let deferred = Q.defer()
     db.head(id, (err, _, headers) => {
       this._handle(err, headers, deferred)
     })
@@ -49,7 +49,7 @@ class LinkDB {
     data.created = new Date().getTime()
     data.accessed = new Date().getTime()
     data.access_count = 0
-    this._save(data._id, data)
+    return this._save(data._id, data)
   }
 
   update(data) {

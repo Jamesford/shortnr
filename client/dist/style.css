@@ -1,0 +1,13 @@
+.nav > ul {
+  list-style: none;
+}
+
+.nav > ul > li {
+  display: inline-block;
+  width: 100px;
+  height: 25px;
+}
+
+th, td {
+  text-align: left;
+}

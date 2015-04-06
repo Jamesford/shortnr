@@ -1,23 +1,27 @@
 {
-  "database_item": {
-    "_id": "example",
-    "url": "http://google.com",
-    "created": "1425486225220",
-    "accessed": "1425494517736",
-    "access_count": "1"    
-  },
+  "database_item":
+    {
+      "_id": "example",
+      "url": "http://google.com",
+      "created": "1425486225220",
+      "accessed": "1425494517736",
+      "access_count": "1"    
+    },
 
-  "save_post_payload": {
-    "_id": "example",
-    "url": "http://google.com"
-  },
+  "save_post_payload":
+    {
+      "_id": "example",
+      "url": "http://google.com"
+    },
 
-  "remove_post_payload": {
-    "_id": "example",
-    "_rev": "3-ae93ja3..." // optional
-  },
+  "remove_post_payload":
+    {
+      "_id": "example",
+      "_rev": "3-ae93ja3..." // optional
+    },
 
-  "exists_post_payload": {
-    "_id": "example"
-  }
+  "exists_post_payload":
+    {
+      "_id": "example"
+    }
 }

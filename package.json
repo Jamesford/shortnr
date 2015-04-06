@@ -4,6 +4,7 @@
   "description": "Open source tinyurl-like service",
   "dependencies": {
     "hapi": "^8.2.0",
+    "joi": "^6.0.8",
     "nano": "^6.1.2",
     "q": "^1.2.0"
   }
