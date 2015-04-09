@@ -7,7 +7,8 @@ var _hasLoaded = false;
 var _data = {
   info: {},
   exists: {},
-  created: {}
+  created: {},
+  list: {}
 };
 
 function setInfo(data) {
@@ -20,6 +21,10 @@ function setExists(data) {
 
 function setSaved(data) {
   _data.created = data;
+}
+
+function setList(data) {
+  _data.list = data;
 }
 
 var Store = assign({}, EventEmitter.prototype, {
@@ -38,6 +43,10 @@ var Store = assign({}, EventEmitter.prototype, {
 
   getSaved: function() {
     return _data.created;
+  },
+
+  getList: function() {
+    return _data.list;
   },
 
   emitChange: function() {
@@ -118,6 +127,23 @@ Dispatcher.register(function(action) {
 
     case Constants.LINK_SAVE_FAILURE:
       console.log(Constants.LINK_SAVE_FAILURE);
+      break;
+
+    /*
+     *  LINK INFO SECTION
+     */
+    case Constants.LINKS_LIST_REQUEST:
+      console.log(Constants.LINKS_LIST_REQUEST);
+      break;
+
+    case Constants.LINKS_LIST_SUCCESS:
+      console.log(Constants.LINKS_LIST_SUCCESS);
+      setList(action.data);
+      Store.emitChange();
+      break;
+
+    case Constants.LINKS_LIST_FAILURE:
+      console.log(Constants.LINKS_LIST_FAILURE);
       break;
 
   }

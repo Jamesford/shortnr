@@ -38,15 +38,14 @@ module.exports = {
     return deferred.promise;
   },
 
-  remove: function (data) {
+  list: function (list) {
     var deferred = Q.defer();
-    request.post('/api/save')
-      .send({ _id: data._id, _rev: data._rev })
+    request.get('/api/' + list.type + '/' + list.range)
       .set('Accept', 'application/json')
       .end(function(err, res) {
         if (err) deferred.reject(err);
         deferred.resolve(res.body);
-      })
+      });
     return deferred.promise;
   }
 

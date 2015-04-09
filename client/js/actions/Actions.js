@@ -55,21 +55,21 @@ var Actions = {
     });
   },
 
-  linkRemove: function (data) {
+  linkList: function (list) {
     Dispatcher.dispatch({
-      actionType: Constants.LINK_REMOVE_REQUEST
+      actionType: Constants.LINKS_LIST_REQUEST
     });
-    API.remove(data).then(function(data) {
+    API.list(list).then(function(data) {
       Dispatcher.dispatch({
-        actionType: Constants.LINK_REMOVE_SUCCESS,
+        actionType: Constants.LINKS_LIST_SUCCESS,
         data: data
       });
     }).fail(function(err) {
       Dispatcher.dispatch({
-        actionType: Constants.LINK_REMOVE_FAILURE,
+        actionType: Constants.LINKS_LIST_FAILURE,
         error: err
-      });
-    });
+      })
+    })
   }
 
 };

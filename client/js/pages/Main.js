@@ -1,8 +1,5 @@
 // Modules
 var React = require('react');
-var moment = require('moment');
-var Store = require('../stores/Store');
-var Actions = require('../actions/Actions');
 
 // Components
 var LinkDetails = require('../components/LinkDetails');

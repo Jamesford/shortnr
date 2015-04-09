@@ -9,6 +9,7 @@ var NotFoundRoute = Router.NotFoundRoute;
 
 // Pages
 var Main = require('./pages/Main');
+var Viewer = require('./pages/Viewer');
 
 // Layout
 var App = React.createClass({
@@ -18,6 +19,7 @@ var App = React.createClass({
         <header className='nav'>
           <ul>
             <li><Link to='main'>Main</Link></li>
+            <li><Link to='viewer'>Viewer</Link></li>
           </ul>
         </header>
         <RouteHandler />
@@ -30,6 +32,7 @@ var App = React.createClass({
 var Routes = (
   <Route name='main' path='/' handler={App}>
     <DefaultRoute handler={Main} />
+    <Route name='viewer' handler={Viewer} />
   </Route>
 );
 

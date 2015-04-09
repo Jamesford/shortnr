@@ -16,7 +16,7 @@ module.exports = keyMirror({
   LINK_SAVE_SUCCESS: null,
   LINK_SAVE_FAILURE: null,
 
-  LINK_REMOVE_REQUEST: null,
-  LINK_REMOVE_SUCCESS: null,
-  LINK_REMOVE_FAILURE: null
+  LINKS_LIST_REQUEST: null,
+  LINKS_LIST_SUCCESS: null,
+  LINKS_LIST_FAILURE: null
 });
