@@ -29,7 +29,7 @@ var Routes = {
     }
   },
 
-  view: {
+  link: {
     handler(req, res) {
       // Ignore favicon.ico
       if (req.params.id === 'favicon.ico') return res().code(404)
@@ -42,10 +42,10 @@ var Routes = {
     }
   },
 
-  list: {
+  links_all: {
     handler(req, res) {
       // Return all links
-      LinkDB.all().then((result) => {
+      LinkDB.views().then((result) => {
         res(result)
       }).fail((err) => {
         res(err.reason).code(err.statusCode)

@@ -1,0 +1,1 @@
+// Script to prepare a link database and add the design doc

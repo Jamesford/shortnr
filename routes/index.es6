@@ -7,11 +7,11 @@ var Endpoints = [
     { method: 'GET',    path: '/{id}',            config: App.redirect },
     
     // Api
-    { method: 'GET',    path: '/api/{id}',        config: App.view   },
-    { method: 'GET',    path: '/api/all_links',   config: App.list   },
-    { method: 'POST',   path: '/api/exists',      config: App.exists },
-    { method: 'POST',   path: '/api/save',        config: App.save   },
-    { method: 'POST',   path: '/api/remove',      config: App.remove }
+    { method: 'GET',    path: '/api/{id}',        config: App.link      },
+    { method: 'GET',    path: '/api/links_all',   config: App.links_all },
+    { method: 'POST',   path: '/api/exists',      config: App.exists    },
+    { method: 'POST',   path: '/api/save',        config: App.save      },
+    { method: 'POST',   path: '/api/remove',      config: App.remove    }
 ]
 
 module.exports = Endpoints

@@ -1,0 +1,15 @@
+{
+   "_id": "_design/views",
+   "views": {
+       "all": {
+           "map": "function(doc){emit(doc._id, doc)}"
+       },
+       "accessed_24hours": {
+           "map": "function(doc){var time = new Date().getTime() - (1000*60*60*24);if(doc.accessed > time){emit(doc._id, doc);}}"
+       },
+       "created_24hours": {
+           "map": "function(doc){var time = new Date().getTime() - (1000*60*60*24);if(doc.created > time){emit(doc._id, doc);}}"
+       }
+   },
+   "language": "javascript"
+}

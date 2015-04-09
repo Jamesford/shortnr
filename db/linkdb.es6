@@ -36,9 +36,10 @@ class LinkDB {
     return deferred.promise
   }
 
-  all() {
+  views(view) {
+    let id = view || 'all'
     let deferred = Q.defer()
-    db.list((err, data) => {
+    db.view('views', id, (err, data) => {
       this._handle(err, data, deferred)
     })
     return deferred.promise
