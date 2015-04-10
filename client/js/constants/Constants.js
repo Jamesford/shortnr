@@ -4,6 +4,9 @@ module.exports = keyMirror({
   CHANGE: null,
   SAVED: null,
 
+  LISTEN_CHANGE_START: null,
+  LISTEN_CHANGE_EVENT: null,
+
   LINK_INFO_REQUEST: null,
   LINK_INFO_SUCCESS: null,
   LINK_INFO_FAILURE: null,

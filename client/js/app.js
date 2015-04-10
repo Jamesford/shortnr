@@ -11,6 +11,9 @@ var NotFoundRoute = Router.NotFoundRoute;
 var Main = require('./pages/Main');
 var Viewer = require('./pages/Viewer');
 
+// Realtime Data Updates
+require('./utils/Sockets')
+
 // Layout
 var App = React.createClass({
   render: function() {

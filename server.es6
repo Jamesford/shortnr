@@ -3,15 +3,24 @@ var Hapi = require('hapi')
 
 // APP
 var Routes = require('./routes')
+var Sockets = require('./sockets')
 var server = new Hapi.Server()
 
 // Create Connection
 server.connection({
-  port: 3000
+  port: 3000,
+  labels: ['api']
+})
+server.connection({
+  port: 3001,
+  labels: ['sockets']
 })
 
 // Load Routes
-server.route(Routes)
+server.select('api').route(Routes)
+
+// Load Sockets
+new Sockets(server.select('sockets').listener)
 
 // Start Server
 server.start(() => {

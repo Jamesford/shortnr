@@ -8,7 +8,7 @@ var _data = {
   info: {},
   exists: {},
   created: {},
-  list: {}
+  list: []
 };
 
 function setInfo(data) {
@@ -25,6 +25,29 @@ function setSaved(data) {
 
 function setList(data) {
   _data.list = data;
+}
+
+function realtimeUpdateInfo(link) {
+  if (_data.info._id === link._id) {
+    _data.info = link
+    Store.emitChange();
+  }
+}
+
+function realtimeUpdateList(link) {
+  var shouldEmitChange = false;
+  _data.list.map(function(item) {
+    if (item.id === link._id) {
+      shouldEmitChange = true;
+      item.value = link;
+    }
+    return item;
+  });
+  if (shouldEmitChange === true) {
+    Store.emitChange()
+  } else {
+    // Probably need to refresh the data, unless filtering
+  }
 }
 
 var Store = assign({}, EventEmitter.prototype, {
@@ -144,6 +167,19 @@ Dispatcher.register(function(action) {
 
     case Constants.LINKS_LIST_FAILURE:
       console.log(Constants.LINKS_LIST_FAILURE);
+      break;
+
+    /*
+     *  REALTIME UPDATES SECTION
+     */
+    case Constants.LISTEN_CHANGE_START:
+      console.log(Constants.LISTEN_CHANGE_START);
+      break;
+
+    case Constants.LISTEN_CHANGE_EVENT:
+      console.log(Constants.LISTEN_CHANGE_EVENT);
+      realtimeUpdateInfo(action.data);
+      realtimeUpdateList(action.data);
       break;
 
   }

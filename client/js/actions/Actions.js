@@ -3,7 +3,7 @@ var Constants = require('../constants/Constants');
 var API = require('../utils/API');
 
 var Actions = {
-  
+
   linkInfo: function (_id) {
     Dispatcher.dispatch({
       actionType: Constants.LINK_INFO_REQUEST
