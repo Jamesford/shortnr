@@ -49,25 +49,29 @@ var LinkLists = React.createClass({
 
     return (
       <div>
-        <span className='selectors'>
-          <select className='type' value={list.type} onChange={this._typeChange}>
-            <option value='links'>Links</option>
-            <option value='accessed'>Accessed</option>
-            <option value='created'>Created</option>
-          </select>
-          { list.type === 'links' &&
-            <select className='range' value={list.range} onChange={this._rangeChange} disabled>
-              <option value='all'>All</option>
+        <div className='row'>
+          <div className='three columns'>
+            <select className='type u-full-width' value={list.type} onChange={this._typeChange}>
+              <option value='links'>Links</option>
+              <option value='accessed'>Accessed</option>
+              <option value='created'>Created</option>
             </select>
-          }
-          { list.type !== 'links' &&
-            <select className='range' value={list.range} onChange={this._rangeChange}>
-              <option value='day'>Day</option>
-              <option value='week'>Week</option>
-              <option value='month'>Month</option>
-            </select>
-          }
-        </span>
+          </div>
+          <div className='two columns'>
+            { list.type === 'links' &&
+              <select className='range u-full-width' value={list.range} onChange={this._rangeChange} disabled>
+                <option value='all'>All</option>
+              </select>
+            }
+            { list.type !== 'links' &&
+              <select className='range u-full-width' value={list.range} onChange={this._rangeChange}>
+                <option value='day'>Day</option>
+                <option value='week'>Week</option>
+                <option value='month'>Month</option>
+              </select>
+            }
+          </div>
+        </div>
         { data.length > 0 &&
           <table className='u-full-width'>
             <thead>

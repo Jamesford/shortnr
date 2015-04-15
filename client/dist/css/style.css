@@ -1,13 +1,16 @@
-/*.nav > ul {
-  list-style: none;
+.notification {
+  border-color: #33C3F0;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 5px 10px;
 }
 
-.nav > ul > li {
-  display: inline-block;
-  width: 100px;
-  height: 25px;
+.notification.success {
+  border-color: #2ECC71;
 }
 
-th, td {
-  text-align: left;
-}*/
+.notification.error {
+  border-color: #E74C3C;
+}
