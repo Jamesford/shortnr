@@ -14,16 +14,25 @@ var Viewer = require('./pages/Viewer');
 // Realtime Data Updates
 require('./utils/Sockets')
 
+        // <header className='nav'>
+        //   <ul>
+        //     <li><Link to='main'>Main</Link></li>
+        //     <li><Link to='viewer'>Viewer</Link></li>
+        //   </ul>
+        // </header>
+
 // Layout
 var App = React.createClass({
   render: function() {
     return (
-      <div>
-        <header className='nav'>
-          <ul>
-            <li><Link to='main'>Main</Link></li>
-            <li><Link to='viewer'>Viewer</Link></li>
-          </ul>
+      <div className='container'>
+        <header className='row'>
+          <div className='one column'>
+            <Link to='main'>Main</Link>
+          </div>
+          <div className='one column'>
+            <Link to='viewer'>Viewer</Link>
+          </div>
         </header>
         <RouteHandler />
       </div>

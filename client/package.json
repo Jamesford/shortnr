@@ -24,8 +24,8 @@
   },
   "main": "js/app.js",
   "scripts": {
-    "start": "watchify -o dist/bundle.js -v -d js/app.js",
-    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > dist/bundle.min.js"
+    "start": "watchify -o dist/js/bundle.js -v -d js/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > dist/js/bundle.min.js"
   },
   "browserify": {
     "transform": [

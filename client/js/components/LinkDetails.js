@@ -5,7 +5,7 @@ var Store = require('../stores/Store');
 var Actions = require('../actions/Actions');
 
 // Local Constants
-var TIME_FORMAT = 'YYYY-MM-DD HH:mm'
+var TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss'
 
 var LinkDetails = React.createClass({
   displayName: 'LinkDetails',
