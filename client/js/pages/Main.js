@@ -10,10 +10,7 @@ var Main = React.createClass({
   render: function() {
     return (
       <div className='main'>
-        <h2>Main</h2>
-        <hr />
-        <LinkDetails />
-        <hr />
+        <h2>Create Link</h2>
         <LinkExists />
       </div>
     )

@@ -9,7 +9,7 @@ var Viewer = React.createClass({
   render: function() {
     return (
       <div className='main'>
-        <h2>Viewer</h2>
+        <h2>Existing Links</h2>
         <LinkLists />
       </div>
     )

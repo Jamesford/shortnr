@@ -69,7 +69,7 @@ var LinkLists = React.createClass({
           }
         </span>
         { data.length > 0 &&
-          <table>
+          <table className='u-full-width'>
             <thead>
               <tr>
                 <th>ID</th>

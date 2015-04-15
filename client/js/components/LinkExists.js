@@ -25,16 +25,26 @@ var LinkExists = React.createClass({
     var status = this.state.status;
     return (
       <div>
+
+        { this.state.saved !== null &&
+          <div className='u-full-width notification success'>
+            <span>Successfully created <a href='http://vkq.io/{this.state.saved.id}'>http://vkq.io/{this.state.saved.id}</a></span>
+          </div>
+        }
+
         <form>
-          <label>
-            <small>Link ID</small>
-            <input type='text' value={this.state.id} onChange={this.formChangeID} />
-          </label>
-          <label>
-            <small>Link URL</small>
-            <input type='text' value={this.state.url} onChange={this.formChangeURL} />
-          </label>
-          <button type='button' onClick={this.createLink}>Create</button>
+          <div className='row'>
+            <div className='six columns'>
+              <label for='linkID'>Link ID</label>
+              <input className='u-full-width' id='linkID' type='text' value={this.state.id} onChange={this.formChangeID} />
+            </div>
+            
+            <div className='six columns'>
+              <label for='linkURL'>Link URL</label>
+              <input className='u-full-width' id='linkURL' type='text' value={this.state.url} onChange={this.formChangeURL} />
+            </div>
+          </div>
+          <button className='u-full-width button-primary' type='button' onClick={this.createLink}>Create</button>
         </form>
         { status === 'loading' &&
           <p>Checking Status...</p>

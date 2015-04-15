@@ -28,10 +28,10 @@ var App = React.createClass({
       <div className='container'>
         <header className='row'>
           <div className='one column'>
-            <Link to='main'>Main</Link>
+            <Link to='main'>Create</Link>
           </div>
           <div className='one column'>
-            <Link to='viewer'>Viewer</Link>
+            <Link to='viewer'>View</Link>
           </div>
         </header>
         <RouteHandler />
