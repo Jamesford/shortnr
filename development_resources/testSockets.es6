@@ -1,4 +1,5 @@
-var socket = require('socket.io-client')('http://localhost:3001')
+// var socket = require('socket.io-client')('http://localhost:3001')
+var socket = require('socket.io-client')('http://vkq.io:3001')
 
 // Send Ping
 function ping() {
