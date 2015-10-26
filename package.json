@@ -5,6 +5,7 @@
   "dependencies": {
     "aguid": "^1.0.3",
     "bcrypt-nodejs": "0.0.3",
+    "blipp": "^2.3.0",
     "hapi": "^9.0.2",
     "hapi-auth-jwt2": "^5.0.2",
     "joi": "^6.6.1",
