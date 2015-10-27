@@ -1,0 +1,36 @@
+USER
+{
+  "id": "Jamesford",
+  "passhash": "password",
+  "access": ["user"]
+}
+
+LINK
+{
+  "id": "x6s7",
+  "url": "http://stobbs.me",
+  "owner": "Jamesford",
+  "created": "Tue Oct 27 2015 17:05:19 GMT+0800 (CST)"
+}
+
+LINK HIT
+{
+  "id": "383022-383873-38392-98383",
+  "link_id": "x6s7",
+  "time": 1445936881684
+}
+
+NOTE
+{
+  "id": "x6s7",
+  "text": "A note the user wishes to save",
+  "owner": "Jamesford",
+  "created": "Tue Oct 27 2015 17:05:19 GMT+0800 (CST)"
+}
+
+NOTE HIT
+{
+  "id": "383022-383873-38392-98383",
+  "note_id": "x6s7",
+  "time": 1445936881684
+}
