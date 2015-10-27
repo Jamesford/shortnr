@@ -5,4 +5,12 @@ exports.index = {
   handler: (req, res) => {
     res('Server Online');
   }
-}
+};
+
+exports.files = {};
+
+exports.redirect = {};
+
+exports.note = {};
+
+exports.user = {};

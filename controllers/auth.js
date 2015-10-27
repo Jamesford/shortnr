@@ -40,3 +40,7 @@ exports.isadmin = {
       .header("Authorization", req.auth.credentials.token);
   }
 };
+
+exports.signup = {};
+
+exports.exists = {};
