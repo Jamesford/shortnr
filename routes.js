@@ -14,8 +14,8 @@ module.exports = [
   { method: 'POST', path: '/api/auth/logout', config: Auth.logout},
   { method: 'GET', path: '/api/auth/isauth', config: Auth.isauth},
   { method: 'GET', path: '/api/auth/isadmin', config: Auth.isadmin},
-  // { method: 'POST', path: '/api/auth/signup', config: Auth.signup },
-  // { method: 'POST', path: '/api/auth/exists', config: Auth.exists },
+  { method: 'POST', path: '/api/auth/signup', config: Auth.signup },
+  { method: 'POST', path: '/api/auth/exists', config: Auth.exists },
 
   // { method: 'GET', path: '/api/link/{id}', config: Link.get },
   // { method: 'POST', path: '/api/link/exists', config: Link.exists },

@@ -1,9 +1,10 @@
+import Users from '../db/users';
 import session from '../lib/session';
 
 var exports = module.exports = {};
 
 exports.login = {
-  auth: false,    
+  auth: false,
   handler: (req, res) => {
     session.start(req.payload, (err, token) => {
       if (err) { return res(err); }
@@ -41,6 +42,27 @@ exports.isadmin = {
   }
 };
 
-exports.signup = {};
+exports.signup = {
+  auth: false,
+  handler: (req, res) => {
+    Users.create(req.payload).then((data) => {
+      return res(data)
+    }).fail((err) => {
+      return res(err)
+    })
+  }
+};
 
-exports.exists = {};
+exports.exists = {
+  auth: false,
+  handler: (req, res) => {
+    Users.exists(req.payload.username).then((data) => {
+      return res(true) // User Exists
+    }).fail((err) => {
+      if (err.statusCode === 404) {
+        return res(false) // User Doesnt Exist
+      }
+      return res(err) // error
+    })
+  }
+};
